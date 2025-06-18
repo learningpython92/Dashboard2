@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .database import engine
 from . import models
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-from .routers import summary, hiring, insights  # <-- 1. ADD 'insights' TO THIS IMPORT
+from .routers import summary, hiring, insights,drilldowns  # <-- 1. ADD 'insights' TO THIS IMPORT
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 app = FastAPI(
@@ -39,6 +39,7 @@ app.include_router(hiring.router, prefix="/api/v1")
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 app.include_router(insights.router, prefix="/api/v1") # <-- 2. ADD THIS LINE TO INCLUDE THE AI ROUTER
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app.include_router(drilldowns.router, prefix="/api/v1/kpis/drilldown", tags=["KPI Drilldowns"]) # <-- 2. Add this line
 
 
 # --- Root Endpoint ---
