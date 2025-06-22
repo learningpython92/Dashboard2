@@ -1,5 +1,6 @@
+<!-- src/routes/+layout.svelte -->
 <script>
-  import "../app.css";
+  import '../app.css';
 </script>
 
-<slot />
+<slot></slot>
