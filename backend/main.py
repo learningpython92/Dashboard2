@@ -21,7 +21,7 @@ origins = [
     "http://localhost",
     "http://localhost:5173",  # Default SvelteKit dev port
     "http://localhost:3000",  # Default Svelte/Vite dev port
-    "https://dashboard2-dkh6cjiou-ashwinrajaram11-gmailcoms-projects.vercel.app"
+    "https://*-ashwinrajaram11-gmailcoms-projects.vercel.app"
 ]
 
 app.add_middleware(
